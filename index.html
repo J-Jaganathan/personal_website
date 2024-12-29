@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaganathan J - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0b0ab5ff52.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p class="glowing-text">Aspiring Data Scientist</p>
+            <h1 class="color-changing-text">Hi, I'm <span>Jaganathan</span><br>From India</h1>
+        </div>
+    </div>
+</div>
+<!-----------about------------->
+<div id="about">
+  <div class="container">
+    <div class="row">
+        <div class="about-col-1">
+            <img src="images/user.png">
+        </div>
+        <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+                <ul>
+                    <li>I am Jaganathan J, a driven data science enthusiast with hands-on experience in applying analytical and programming skills to solve real-world problems.</li>
+                    <li>I have worked on data-driven projects integrating Firebase and MongoDB, leveraging web development tools to build functional applications.</li>
+                    <li>With a strong grasp of data science fundamentals, I am expanding my expertise in areas like Generative AI and AngularJS.</li>
+                    <li>My ability to navigate challenges, adapt to new technologies, and deliver solutions reflects my commitment to continuous learning and innovation in the field of data science.</li>
+                </ul>
+            </p>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id='skills'>
+                <h2>What I Bring to the Table</h2>
+                <ul>
+                    <li>
+                        <span class="title">Data Science Expertise</span>
+                        <p>Proficient in building machine learning models, analyzing datasets, and delivering actionable insights.</p>
+                    </li>
+                    <li>
+                        <span class="title">Web Development Skills</span>
+                        <p>Experienced in designing, coding, and deploying responsive websites using modern tools and frameworks.</p>
+                    </li>
+                    <li>
+                        <span class="title">Continuous Learner</span>
+                        <p>Constantly expanding knowledge in AngularJS, Generative AI, and GitHub for impactful project contributions.</p>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="tab-contents" id='experience'>
+                <h2>Professional Experience</h2>
+                <ul>
+                    <li>
+                        <span>2024 - Present</span>
+                        <p>Intern at Personifwy<br>Focused on developing scalable solutions and contributing to core technical processes.</p>
+                    </li>
+                    <li>
+                        <span>2023</span>
+                        <p>Data Science Intern at Adverk Technologies<br>Worked on data-driven projects and applied machine learning techniques to real-world problems.</p>
+                    </li>
+                    <li>
+                        <span class="title">Personal Projects</span>
+                        <p>Created and hosted public websites, showcasing expertise in front-end and database integration.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-contents" id='education'>
+                <h2>Educational Experience</h2>
+                <ul>
+                    <li>
+                        <span>2022 - Present</span>
+                        <p>Student from Easwari Engineering College, 3rd Year Currently</p>
+                    </li>
+                    <li>
+                        <span>2020 - 2022</span>
+                        <p>Finished my 10th Grade and 12th Grade on Velankanni Matriculation Higher Secondary School</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!---------services-------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-gears"></i>
+                <h2>Data Science & Machine Learning</h2>
+                <p>Developing and testing machine learning models to solve real-world problems. Expertise in analyzing datasets and extracting actionable insights.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>Designing and building responsive websites with seamless front-end and back-end integration. Skilled in deploying applications to public domains.</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-------portfolio--------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work.png">
+                <div class="layer">
+                    <h3>Grocery Helper App</h3>
+                    <p>This is a grocery helper web app (the project is ongoing), with real-time data storage and retrieval. If you are visiting this website, click this link. Anyone can read or write data on the website, so don't enter any sensitive info.</p>
+                    <a href="https://groceryhelperteam8.netlify.app/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work2.png">
+                <div class="layer">
+                    <h3>Product Validation Prediction</h3>
+                    <p>Built for a hackathon, this Random Forest Classifier utilizes advanced preprocessing and encoding techniques for accurate predictions on whether the product is real or fake, with models saved for reuse.</p>
+                    <a href="https://github.com/J-Jaganathan/ML-projects/blob/main/ProductconfirmerML.ipynb"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work3.png">
+                <div class="layer">
+                    <h3>Stroke Prediction</h3>
+                    <p>Developed during an internship, this Decision Tree Classifier predicts stroke likelihood based on healthcare data, featuring robust preprocessing and intuitive decision tree visualizations to find whether the patient affected by stroke or not.</p>
+                    <a href="https://github.com/J-Jaganathan/ML-projects/blob/main/Strokefinding.ipynb"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+    </div>
+    <!----------contact------------>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>310622104064@eec.srmrmp.edu.in</p>
+                    <p><i class="fa-solid fa-envelope"></i>jaganathanjjds@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/jaganathan-j-a5466a257/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/J-Jaganathan"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class='contact-right'>
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2" id="downloadButton">Submit your details to download my CV and Resume</button>
+                    </form>
+                    <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Jaganathan. Made for Professional Use</p>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }        
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add('active-tab');
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    document.getElementById('downloadButton').addEventListener('click', function() {
+        var link1 = document.createElement('a');
+        link1.href = 'images/CV_Version_1.docx';
+        link1.download = 'CV_Version_1.docx';
+        document.body.appendChild(link1);
+        link1.click();
+        document.body.removeChild(link1);
+    
+        var link2 = document.createElement('a');
+        link2.href = 'images/Version-2_Resume.pdf';
+        link2.download = 'Version-2_Resume.pdf';
+        document.body.appendChild(link2);
+        link2.click();
+        document.body.removeChild(link2);
+    });
+    </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxMX_VqKr6XbQOpwes0VBa4dfRFH9y2LSvlpzncEnOHWNyxnBX7XedcZ7xrRYGOjwB2PQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully";
+            setTimeout(function(){
+                msg.innerHTML = "";
+            }, 2000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>

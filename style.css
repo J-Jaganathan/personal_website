@@ -135,11 +135,11 @@ nav ul li a:hover::after{
 .header-text h1{
     font-size: 50px;
     margin-left: 0%;
-    margin-top:20px
+    margin-top:20px;
+    animation: glow 1.5s ease-in-out infinite alternate;
 }
 .header-text h1 span {
-    color: #ffffff;
-    animation: glow 1.5s ease-in-out infinite alternate;
+    animation: colorChange 3s infinite;
 }
 
 @keyframes glow {
@@ -148,6 +148,41 @@ nav ul li a:hover::after{
     }
     to {
         text-shadow: 0 0 10px #fff, 0 0 15px #00bfff, 0 0 20px #00bfff, 0 0 25px #00bfff, 0 0 30px #00bfff, 0 0 35px #00bfff, 0 0 40px #00bfff;
+    }
+}
+@keyframes colorChange {
+    0% {
+        color: #00bfff; /* Light Blue */
+    }
+    10% {
+        color: #1e90ff; /* Dodger Blue */
+    }
+    20% {
+        color: #006eff; /* Medium Blue */
+    }
+    30% {
+        color: #221eff; /* Dark Blue */
+    }
+    40% {
+        color: #6200ff; /* Indigo */
+    }
+    50% {
+        color: #8a00ff; /* Violet */
+    }
+    60% {
+        color: #b300ff; /* Purple */
+    }
+    70% {
+        color: #d500ff; /* Magenta */
+    }
+    80% {
+        color: #ff00d5; /* Deep Pink */
+    }
+    90% {
+        color: #ff006e; /* Hot Pink */
+    }
+    100% {
+        color: #ff0000; /* Red */
     }
 }
 /*-------------about----------*/
@@ -439,7 +474,7 @@ nav .fas{
 
     }
     .header-text{
-        margin-top: 100%;
+        margin-top: 140%;
         font-size: 16px;
     }
     .header-text h1{

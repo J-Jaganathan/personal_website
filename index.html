@@ -213,19 +213,25 @@
 </script>
 <script>
     document.getElementById('downloadButton').addEventListener('click', function() {
-        var link1 = document.createElement('a');
-        link1.href = 'images/CV_Version_1.docx';
-        link1.download = 'CV_Version_1.docx';
-        document.body.appendChild(link1);
-        link1.click();
-        document.body.removeChild(link1);
-    
-        var link2 = document.createElement('a');
-        link2.href = 'images/Version-2_Resume.pdf';
-        link2.download = 'Version-2_Resume.pdf';
-        document.body.appendChild(link2);
-        link2.click();
-        document.body.removeChild(link2);
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        if (name && email && message) {
+            var link1 = document.createElement('a');
+            link1.href = 'images/CV_Version_1.docx';
+            link1.download = 'CV_Version_1.docx';
+            document.body.appendChild(link1);
+            link1.click();
+            document.body.removeChild(link1);
+        
+            var link2 = document.createElement('a');
+            link2.href = 'images/Version-2_Resume.pdf';
+            link2.download = 'Version-2_Resume.pdf';
+            document.body.appendChild(link2);
+            link2.click();
+            document.body.removeChild(link2);
+        }
     });
     </script>
 <script>

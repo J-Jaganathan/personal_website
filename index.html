@@ -140,19 +140,19 @@
                 </div>
             </div>
             <div class="work">
+                <img src="images/work3.png">
+                <div class="layer">
+                    <h3>Species ML App: Unlocking Wildlife Insights</h3>
+                    <p>Explore the Penguin Species ML App, a cutting-edge web application designed to simplify species classification using machine learning with inputs of its sizes and habitats</p>
+                    <a href="https://github.com/J-Jaganathan/ML-projects/blob/main/Strokefinding.ipynb"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
                 <img src="images/work2.png">
                 <div class="layer">
                     <h3>Product Validation Prediction</h3>
                     <p>Built for a hackathon, this Random Forest Classifier utilizes advanced preprocessing and encoding techniques for accurate predictions on whether the product is real or fake, with models saved for reuse.</p>
                     <a href="https://github.com/J-Jaganathan/ML-projects/blob/main/ProductconfirmerML.ipynb"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="images/work3.png">
-                <div class="layer">
-                    <h3>Stroke Prediction</h3>
-                    <p>Developed during an internship, this Decision Tree Classifier predicts stroke likelihood based on healthcare data, featuring robust preprocessing and intuitive decision tree visualizations to find whether the patient affected by stroke or not.</p>
-                    <a href="https://github.com/J-Jaganathan/ML-projects/blob/main/Strokefinding.ipynb"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
         </div>
@@ -176,7 +176,7 @@
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn2" id="downloadButton">Submit your details to download my CV and Resume</button>
+                        <button type="submit" class="btn btn2" >Submit your details to download my CV and Resume</button>
                     </form>
                     <span id="msg"></span>
             </div>
@@ -212,40 +212,76 @@
     }
 </script>
 <script>
-    document.getElementById('downloadButton').addEventListener('click', function() {
-        
-        var link1 = document.createElement('a');
-        link1.href = 'images/CV_Version_1.docx';
-        link1.download = 'CV_Version_1.docx';
-        document.body.appendChild(link1);
-        link1.click();
-        document.body.removeChild(link1);
-    
-        var link2 = document.createElement('a');
-        link2.href = 'images/Version-2_Resume.pdf';
-        link2.download = 'Version-2_Resume.pdf';
-        document.body.appendChild(link2);
-        link2.click();
-        document.body.removeChild(link2);
-    });
-    </script>
-<script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxMX_VqKr6XbQOpwes0VBa4dfRFH9y2LSvlpzncEnOHWNyxnBX7XedcZ7xrRYGOjwB2PQ/exec'
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById("msg");
 
+    // Remove the click event listener from the button
+    // Instead, handle downloads after form submission
+
     form.addEventListener('submit', e => {
       e.preventDefault()
+      
+      // Get form values to verify they're all filled
+      const name = form.elements['Name'].value.trim();
+      const email = form.elements['Email'].value.trim();
+      const message = form.elements['Message'].value.trim();
+      
+      if (!name || !email || !message) {
+          msg.innerHTML = "Please fill in all fields";
+          setTimeout(function(){
+              msg.innerHTML = "";
+          }, 3000);
+          return;
+      }
+      
+      // Show sending message
+      msg.innerHTML = "Sending...";
+      
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
-            msg.innerHTML = "Message sent successfully";
+            msg.innerHTML = "Message sent successfully! Downloading files...";
+            
+            // Now initiate downloads
+            setTimeout(function() {
+                // Download CV
+                var link1 = document.createElement('a');
+                link1.href = 'images/CV_Version_1.docx';
+                link1.download = 'CV_Version_1.docx';
+                document.body.appendChild(link1);
+                link1.click();
+                document.body.removeChild(link1);
+                
+                // Download Resume after a short delay to prevent browser blocking
+                setTimeout(function() {
+                    var link2 = document.createElement('a');
+                    link2.href = 'images/Version-2_Resume.pdf';
+                    link2.download = 'Version-2_Resume.pdf';
+                    document.body.appendChild(link2);
+                    link2.click();
+                    document.body.removeChild(link2);
+                    
+                    // Clear the message after downloads
+                    setTimeout(function(){
+                        msg.innerHTML = "Download complete!";
+                        setTimeout(function(){
+                            msg.innerHTML = "";
+                        }, 2000);
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+            
+            // Reset form
+            form.reset();
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            msg.innerHTML = "Error sending message. Please try again.";
             setTimeout(function(){
                 msg.innerHTML = "";
-            }, 2000)
-            form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+            }, 3000);
+        });
+    });
+</script>
 </body>
 </html>
